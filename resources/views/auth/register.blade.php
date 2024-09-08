@@ -1,13 +1,9 @@
 <style>
-    /* resources/css/app.css */
-
-    /* Estilo para los campos de entrada con errores */
+    /* Mover a resources/css/app.css */
     .input-error {
-        border-color: #dc3545 !important; /* Rojo para el borde del campo */
-        background-color: #f8d7da; /* Color de fondo suave para indicar error */
+        border-color: #dc3545 !important;
+        background-color: #f8d7da;
     }
-
-
 </style>
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">

@@ -38,6 +38,20 @@
                 <x-input-error :messages="$errors->get('surnames')" class="mt-2" />
             </div>
         </div>
+        <!-- DNI -->
+        <div class="mt-4">
+            <x-input-label for="dni" :value="__('DNI')" />
+            <x-text-input
+                id="dni"
+                name="dni"
+                class="block mt-1 w-full {{ $errors->has('dni') ? 'input-error' : '' }}"
+                type="text"
+                :value="old('dni')"
+                required
+                autocomplete="dni"
+            />
+            <x-input-error :messages="$errors->get('dni')" class="mt-2" />
+        </div>
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
@@ -74,6 +88,32 @@
                           autocomplete="new-password" />
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 error-message" />
         </div>
+        <!-- Telephone -->
+        <div class="mt-4">
+            <x-input-label for="telephone" :value="__('Telephone')" />
+            <x-text-input
+                id="telephone"
+                name="telephone"
+                class="block mt-1 w-full {{ $errors->has('telephone') ? 'input-error' : '' }}"
+                type="text"
+                :value="old('telephone')"
+                required
+                autocomplete="telephone"
+            />
+            <x-input-error :messages="$errors->get('telephone')" class="mt-2" />
+        </div>
+        <!-- Country -->
+        <div class="mt-4">
+            <x-input-label for="country" :value="__('Country')" />
+            <select name="country" id="country" required>
+                <option value="" disabled selected>Select your country</option>
+                @foreach (config('countries') as $code => $name)
+                    <option value="{{ $code }}">{{ $name }}</option>
+                @endforeach
+            </select>
+            <x-input-error :messages="$errors->get('country')" class="mt-2" />
+        </div>
+        <!-- Already registered? -->
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
                 {{ __('Already registered?') }}

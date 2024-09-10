@@ -104,12 +104,7 @@
         <!-- Country -->
         <div class="mt-4">
             <x-input-label for="country" :value="__('Country')" />
-            <select name="country" id="country">
-                <option value="" disabled selected>Select your country</option>
-                @foreach (config('countries') as $code => $name)
-                    <option value="{{$code}}">{{$name}}</option>
-                @endforeach
-            </select>
+            <x-dropdown-select :values="config('countries')" text="Select your country" name="country" id="country" />
             <x-input-error :messages="$errors->get('country')" class="mt-2" />
         </div>
         <!-- Already registered? -->

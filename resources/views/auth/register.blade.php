@@ -97,7 +97,6 @@
                 class="block mt-1 w-full {{ $errors->has('telephone') ? 'input-error' : '' }}"
                 type="text"
                 :value="old('telephone')"
-                required
                 autocomplete="telephone"
             />
             <x-input-error :messages="$errors->get('telephone')" class="mt-2" />
@@ -105,10 +104,10 @@
         <!-- Country -->
         <div class="mt-4">
             <x-input-label for="country" :value="__('Country')" />
-            <select name="country" id="country" required>
+            <select name="country" id="country">
                 <option value="" disabled selected>Select your country</option>
                 @foreach (config('countries') as $code => $name)
-                    <option value="{{ $code }}">{{ $name }}</option>
+                    <option value="{{$code}}">{{$name}}</option>
                 @endforeach
             </select>
             <x-input-error :messages="$errors->get('country')" class="mt-2" />

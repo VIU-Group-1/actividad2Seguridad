@@ -20,10 +20,21 @@ class DatabaseSeeder extends Seeder
             'surnames' => 'Surnames',
             'dni' => '12345678Z',
             'email' => 'test@example.com',
-            'password' => '123456789',
-            'telephone' => '666333999',
+            'password' => '123456789Aa.',
+            'telephone' => '+34666333999',
             'country' => 'Italia',
             'aboutYou' => 'Soy un usuario de prueba.'
+        ]);
+
+        User::factory()->create([
+            'name' => 'User VIU',
+            'surnames' => 'VIU Apellidos',
+            'dni' => '03692774D',
+            'email' => 'seguridadweb@campusviu.es',
+            'password' => bcrypt('S3gur1d4d?W3b'),
+            'telephone' => '+34666111222',
+            'country' => 'España',
+            'aboutYou' => 'Soy un usuario de prueba VIU.'
         ]);
     }
 }

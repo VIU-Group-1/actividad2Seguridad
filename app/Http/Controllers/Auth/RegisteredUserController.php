@@ -38,6 +38,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', 'min:10', Password::min(10)->mixedCase()->numbers()->symbols()->letters()],
             'telephone' => ['nullable', 'string', 'min:9', 'max:13', 'regex:/^\+[0-9]{1,3}[0-9]{9}$/'],
             'country' => ['nullable', 'string'],
+            'aboutYou' => ['nullable', 'string'],
         ]);
 
         $user = User::create([
@@ -48,6 +49,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'telephone' => $request->telephone,
             'country' => $request->country,
+            'aboutYou' => $request->aboutYou,
         ]);
 
         event(new Registered($user));

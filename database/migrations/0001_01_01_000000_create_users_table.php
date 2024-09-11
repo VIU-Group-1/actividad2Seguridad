@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('telephone');
             $table->string('country');
             $table->rememberToken();
+            $table->string('aboutYou');
             $table->timestamps();
         });
 

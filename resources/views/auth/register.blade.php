@@ -107,6 +107,21 @@
             <x-dropdown-select :values="config('countries')" text="Select your country" name="country" id="country" />
             <x-input-error :messages="$errors->get('country')" class="mt-2" />
         </div>
+        <!-- About you -->
+        <div class="mt-4">
+            <div>
+                <x-input-label for="aboutYou" :value="__('About you')" />
+                <x-text-input
+                    id="aboutYou"
+                    name="aboutYou"
+                    class="block mt-1 w-full {{ $errors->has('aboutYou') ? 'input-error' : '' }}"
+                    type="text"
+                    :value="old('aboutYou')"
+                    autocomplete="about-you"
+                />
+                <x-input-error :messages="$errors->get('aboutYou')" class="mt-2" />
+            </div>
+        </div>
         <!-- Already registered? -->
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">

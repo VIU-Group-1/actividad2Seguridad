@@ -42,6 +42,6 @@ class ValidDNI implements Rule
      */
     public function message()
     {
-        return 'El DNI no cumple con el formato del algoritmo.';
+        return __('validation.dni');
     }
 }

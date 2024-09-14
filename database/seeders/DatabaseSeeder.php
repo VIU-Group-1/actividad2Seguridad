@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'surnames' => 'VIU Apellidos',
             'dni' => '03692774D',
             'email' => 'seguridadweb@campusviu.es',
-            'password' => bcrypt('S3gur1d4d?W3b'), // Asegúrate de usar bcrypt para cifrar la contraseña
+            'password' => bcrypt('S3gur1d4d?W3b'),
             'telephone' => '+34666111222',
             'country' => 'España',
             'aboutYou' => 'Soy un usuario de prueba VIU.'

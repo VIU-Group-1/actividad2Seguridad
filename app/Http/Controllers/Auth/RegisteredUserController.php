@@ -38,7 +38,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', 'min:10', Password::min(10)->mixedCase()->numbers()->symbols()->letters()],
             'telephone' => ['nullable', 'string', 'min:9', 'max:13', 'regex:/^\+[0-9]{1,3}[0-9]{9}$/'],
             'country' => ['nullable', 'string'],
-            'aboutYou' => ['nullable', 'string'],
+            'aboutYou' => ['nullable', 'string', 'min:20', 'max:250', 'regex:/^([^0-9]*)$/'],
         ]);
 
         $user = User::create([

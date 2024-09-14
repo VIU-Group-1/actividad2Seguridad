@@ -48,6 +48,7 @@
         'digits_between' => 'El campo :attribute debe tener entre :min y :max dígitos.',
         'dimensions' => 'El campo :attribute tiene dimensiones de imagen inválidas.',
         'distinct' => 'El campo :attribute tiene un valor duplicado.',
+        'dni' => 'El campo :attribute no cumple con el algoritmo.',
         'doesnt_end_with' => 'El campo :attribute no puede finalizar con uno de los siguientes valores: :values.',
         'doesnt_start_with' => 'El campo :attribute no puede comenzar con uno de los siguientes valores: :values.',
         'email' => 'El formato del :attribute no es válido.',
